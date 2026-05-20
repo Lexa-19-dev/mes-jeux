@@ -1056,12 +1056,9 @@
 	<script type="text/javascript" src="js/script.js"></script>
 	<script type="text/javascript" src="js/custom.js"></script>
 <script>
-  document.querySelectorAll('a').forEach(link => {
-    let href = link.getAttribute('href');
-    if (href && href.startsWith('/play/')) {
-      link.setAttribute('href', href.substring(1));
-    }
-  });
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/mes-jeux/sw.js', {scope: '/mes-jeux/'});
+  }
 </script>
 	  </body>
 </html>
