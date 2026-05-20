@@ -1055,5 +1055,13 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 	<script type="text/javascript" src="js/custom.js"></script>
+<script>
+  document.querySelectorAll('a').forEach(link => {
+    let href = link.getAttribute('href');
+    if (href && href.startsWith('/play/')) {
+      link.setAttribute('href', '/mes-jeux' + href);
+    }
+  });
+</script>
 	  </body>
 </html>
